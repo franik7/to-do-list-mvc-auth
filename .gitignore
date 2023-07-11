@@ -1,0 +1,4 @@
+node_modules
+.vscode/*
+etc/secrets/.env
+.env
