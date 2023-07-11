@@ -1,37 +1,41 @@
+navbar {
+    justify-content: flex-end;
+    background-color: #343a40;
+    color:aquamarine
+    }
+    
 h1 {
     color: grey;
   }
   
-  .completed{
+.completed{
     text-decoration: line-through;
     color: red;
     font-size: 22px;
   }
-  .not{
+.not{
     font-size: 22px;
   }
   
-  /* Bootstrap Overrides */
-  
-  .todo-list {
+.todo-list {
     list-style-type: none;
   }
   
-  .todo-item {
+.todo-item {
     display: flex;
     align-items: center;
   }
   
-  .todo-item .todo-text {
+.todo-item .todo-text {
     flex-grow: 1;
     margin-right: 10px;
   }
   
-  .reset-button {
+.reset-button {
     margin-top: 10px;
   }
   
-  .logout-link {
+.logout-link {
     margin-top: 10px;
   }
   
