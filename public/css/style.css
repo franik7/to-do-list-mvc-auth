@@ -1,10 +1,37 @@
-h1{
-    color: red;
-}
-.completed{
+h1 {
+    color: grey;
+  }
+  
+  .completed{
     text-decoration: line-through;
-    color: gray;
-}
-.not{
-    text-decoration: underline;
-}
+    color: red;
+    font-size: 22px;
+  }
+  .not{
+    font-size: 22px;
+  }
+  
+  /* Bootstrap Overrides */
+  
+  .todo-list {
+    list-style-type: none;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .todo-item .todo-text {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .reset-button {
+    margin-top: 10px;
+  }
+  
+  .logout-link {
+    margin-top: 10px;
+  }
+  

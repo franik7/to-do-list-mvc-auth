@@ -4,31 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
+    <div class="container mt-5">
+        <h1>Todos</h1>
+        
+        <ul class="list-group">
+            
+            <% todos.forEach( el => { %>
+                
+                <li class='list-group-item todoItem' data-id='<%=el._id%>'>
+                    <span class='<%= el.completed === true ? "completed" : "not"%>'><%= el.todo %></span>
+                    <span class='fa fa-trash del'></span>
+                     
+                </li>
+               
+            <% }) %>
+            <br>
+        </ul>
+        
+        <h2><%= user.userName %> has <%= left %> things left to do</h2>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+        <form action="/todos/createTodo" method='POST'>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter Todo Item" name='todoItem'>
+                <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+        </form>
+        <br>
+        <button class="btn btn-secondary reset">Clear All</button>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
+        <a class="btn btn-secondary" href="/logout">Logout</a>
+    </div>
 
-    <button class="reset">Clear</button>
-
-    <a href="/logout">Logout</a>
-
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
